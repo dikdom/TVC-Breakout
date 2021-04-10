@@ -1,21 +1,22 @@
 # TVC-Breakout
-<img src="imgs/exp-front.jpg" width="500" alt="Expansion breakout">
+<img src="imgs/exp-front.jpg" width="500">
+
 ## Magyar
-Ez a repo olyan nyáklapok EagleCAD terveit tartalmazza, melyek a Videoton TVC számítógép programmodul és felsõ bõvítõ-helyeinek kivezetéseit teszik könnyen (könnyebben) elérhetõvé hardverfejlesztõk számára.
-- _cart_ könyvtár tartalmazza a programmodul forrás file-jait, gerber file-t és a kapcsolási rajzot pdf-ben is.
-- _exp_ könyvtár tartalmazza a felsõ bõvítõ forrás file-jait, gerber file-t és a kapcsolási rajzot pdf-ben is. Az r2-es változat az r1-hez képest annyival tud többet, hogy arra került egy 27C512 -es ROM foglalat is, kapcsolható A13-A15 vonalakkal. Az ellenállások 3# -ra lettek tervezve, hogy egyszerûbben lehessen bele LED -et tenni.
-- _imgs_ könyvtár a már elkészült nyáklapokról tartalmaz fényképeket
-- _lib_ könvytár a szükséges alkatrész-könyvtárakat tartalmazza
-- OPCIONÁLIS: Az exp lap r2 -es változata tartalmazhat egy 64kB -os EEPROM -ot. Ha ebbõl csak a legfelsõ 8kB van használatban, akkor nem kell semmi mást csinálni a lapon. Amennyiben lapozás szükséges, az EEPROM az A13-A15 jeleit a lap kívülrõl kell megkapja (neked kell legenerálnod és az EX_A13, EX_A14, EX_A15 illetve az /EX_CE helyeken visszahozni a jobb alsó tüskesoron). Ilyenkor az A13, A14, A15 és /CE jumperek alját vágni kell és beállítani, hogy honnan érkezzen a címjel + /CE jel. A /CE jel alapból a TVC /EXPn jele. 
-- OPCIONÁLIS: a jeleket vagy a kábelek beforrasztásával, vagy egy tüskesor beillesztésével és szalagkábellel lehet elvezetni.
--- Az exp lapon 3db 2x20 -as tüskesornak van hely amikhez 40 eres szalagkábelek kellenek. Ha megnézed, az egyik tüskesor kiválogatott jeleket tartalmaz. Tanulmányozd, mert lehet, h neked elég csak azokat a jeleket elhozni a lapról. Az alsó két headersor az összes TVC kivezetést tartalmazza.
--- A cart lapon 1db 2x17 -es tüskesornak van hely, amihez 34 eres szalagkábel kell.
-- OPCIONÁLIS: Mindkét lap tartalmaz helyeket ú.n. polifuse-nak, azaz öngyógyító biztosítéknak a +5V -os és a +12V (csak exp) ágon. Jelölésük F1 (és F2 az exp lapon). Nem muszáj berakni, viszont védelmet jelent a TVCnek. Ha berakod, akkor ne felejtsd el elvágni alul a nyákon az átvezetést (ha már elvágtad, akkor be KELL rakni a biztosítékot)!
-- OPCIONÁLIS: Mindkét lap tartalmaz LED-nek és ellenállásnak helyet, melyek visszajelzésként tudnak szolgálni a +5V és a +12V (csak exp lapon) ágaknak.
--- Az exp lapon 3mm -es LEDek és 5k1 és 12k értékû ellenállások kellenek
--- A cart lapon 5mm -es LED és egy 5k1 értékû ellenállás kell
--- Az értékek nem kõbevésett számok, ha azt akarod, hogy jobban világítson a LEDed, akkor rakj be kisebb ellenállást - de csak ésszel (tudd, hogy mit csinálsz)!
-- FONTOS: a felsõ bõvítõ r1 és r2-es változata is le lett gyártva, mûködnek. A programmodulból gyártott r1 -es változatban a GND nem volt bekötve. Ez lett javítva az r2-ben, viszont abból még nem gyártattam, de más változtatás nem lett a nyáklapon, mûködnie kell. Az r1-es - hibás - válozatot nem is töltöttem fel, minek.
+Ez a repo olyan nyÃ¡klapok EagleCAD terveit tartalmazza, melyek a Videoton TVC szÃ¡mÃ­tÃ³gÃ©p programmodul Ã©s felsÃµ bÃµvÃ­tÃµ-helyeinek kivezetÃ©seit teszik kÃ¶nnyen (kÃ¶nnyebben) elÃ©rhetÃµvÃ© hardverfejlesztÃµk szÃ¡mÃ¡ra.
+- _cart_ kÃ¶nyvtÃ¡r tartalmazza a programmodul forrÃ¡s file-jait, gerber file-t Ã©s a kapcsolÃ¡si rajzot pdf-ben is.
+- _exp_ kÃ¶nyvtÃ¡r tartalmazza a felsÃµ bÃµvÃ­tÃµ forrÃ¡s file-jait, gerber file-t Ã©s a kapcsolÃ¡si rajzot pdf-ben is. Az r2-es vÃ¡ltozat az r1-hez kÃ©pest annyival tud tÃ¶bbet, hogy arra kerÃ¼lt egy 27C512 -es ROM foglalat is, kapcsolhatÃ³ A13-A15 vonalakkal. Az ellenÃ¡llÃ¡sok 3# -ra lettek tervezve, hogy egyszerÃ»bben lehessen bele LED -et tenni.
+- _imgs_ kÃ¶nyvtÃ¡r a mÃ¡r elkÃ©szÃ¼lt nyÃ¡klapokrÃ³l tartalmaz fÃ©nykÃ©peket
+- _lib_ kÃ¶nvytÃ¡r a szÃ¼ksÃ©ges alkatrÃ©sz-kÃ¶nyvtÃ¡rakat tartalmazza
+- OPCIONÃLIS: Az exp lap r2 -es vÃ¡ltozata tartalmazhat egy 64kB -os EEPROM -ot. Ha ebbÃµl csak a legfelsÃµ 8kB van hasznÃ¡latban, akkor nem kell semmi mÃ¡st csinÃ¡lni a lapon. Amennyiben lapozÃ¡s szÃ¼ksÃ©ges, az EEPROM az A13-A15 jeleit a lap kÃ­vÃ¼lrÃµl kell megkapja (neked kell legenerÃ¡lnod Ã©s az EX_A13, EX_A14, EX_A15 illetve az /EX_CE helyeken visszahozni a jobb alsÃ³ tÃ¼skesoron). Ilyenkor az A13, A14, A15 Ã©s /CE jumperek aljÃ¡t vÃ¡gni kell Ã©s beÃ¡llÃ­tani, hogy honnan Ã©rkezzen a cÃ­mjel + /CE jel. A /CE jel alapbÃ³l a TVC /EXPn jele. 
+- OPCIONÃLIS: a jeleket vagy a kÃ¡belek beforrasztÃ¡sÃ¡val, vagy egy tÃ¼skesor beillesztÃ©sÃ©vel Ã©s szalagkÃ¡bellel lehet elvezetni.
+-- Az exp lapon 3db 2x20 -as tÃ¼skesornak van hely amikhez 40 eres szalagkÃ¡belek kellenek. Ha megnÃ©zed, az egyik tÃ¼skesor kivÃ¡logatott jeleket tartalmaz. TanulmÃ¡nyozd, mert lehet, h neked elÃ©g csak azokat a jeleket elhozni a laprÃ³l. Az alsÃ³ kÃ©t headersor az Ã¶sszes TVC kivezetÃ©st tartalmazza.
+-- A cart lapon 1db 2x17 -es tÃ¼skesornak van hely, amihez 34 eres szalagkÃ¡bel kell.
+- OPCIONÃLIS: MindkÃ©t lap tartalmaz helyeket Ãº.n. polifuse-nak, azaz Ã¶ngyÃ³gyÃ­tÃ³ biztosÃ­tÃ©knak a +5V -os Ã©s a +12V (csak exp) Ã¡gon. JelÃ¶lÃ©sÃ¼k F1 (Ã©s F2 az exp lapon). Nem muszÃ¡j berakni, viszont vÃ©delmet jelent a TVCnek. Ha berakod, akkor ne felejtsd el elvÃ¡gni alul a nyÃ¡kon az Ã¡tvezetÃ©st (ha mÃ¡r elvÃ¡gtad, akkor be KELL rakni a biztosÃ­tÃ©kot)!
+- OPCIONÃLIS: MindkÃ©t lap tartalmaz LED-nek Ã©s ellenÃ¡llÃ¡snak helyet, melyek visszajelzÃ©skÃ©nt tudnak szolgÃ¡lni a +5V Ã©s a +12V (csak exp lapon) Ã¡gaknak.
+-- Az exp lapon 3mm -es LEDek Ã©s 5k1 Ã©s 12k Ã©rtÃ©kÃ» ellenÃ¡llÃ¡sok kellenek
+-- A cart lapon 5mm -es LED Ã©s egy 5k1 Ã©rtÃ©kÃ» ellenÃ¡llÃ¡s kell
+-- Az Ã©rtÃ©kek nem kÃµbevÃ©sett szÃ¡mok, ha azt akarod, hogy jobban vilÃ¡gÃ­tson a LEDed, akkor rakj be kisebb ellenÃ¡llÃ¡st - de csak Ã©sszel (tudd, hogy mit csinÃ¡lsz)!
+- FONTOS: a felsÃµ bÃµvÃ­tÃµ r1 Ã©s r2-es vÃ¡ltozata is le lett gyÃ¡rtva, mÃ»kÃ¶dnek. A programmodulbÃ³l gyÃ¡rtott r1 -es vÃ¡ltozatban a GND nem volt bekÃ¶tve. Ez lett javÃ­tva az r2-ben, viszont abbÃ³l mÃ©g nem gyÃ¡rtattam, de mÃ¡s vÃ¡ltoztatÃ¡s nem lett a nyÃ¡klapon, mÃ»kÃ¶dnie kell. Az r1-es - hibÃ¡s - vÃ¡lozatot nem is tÃ¶ltÃ¶ttem fel, minek.
 
 
 ## English
