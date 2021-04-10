@@ -1,5 +1,6 @@
 ﻿# TVC-Breakout
 <img src="imgs/exp-front.jpg" width="500" alt="Expansion breakout">
+
 ## Magyar
 Ez a repo olyan nyáklapok EagleCAD terveit tartalmazza, melyek a Videoton TVC számítógép programmodul és felső bővítő-helyeinek kivezetéseit teszik könnyen (könnyebben) elérhetővé hardverfejlesztők számára.
 - _cart_ könyvtár tartalmazza a programmodul forrás file-jait, gerber file-t és a kapcsolási rajzot pdf-ben is.
